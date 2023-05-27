@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 type Tcountry = {
@@ -8,7 +8,7 @@ type Tcountry = {
   cities:string[]
 
 }
-function App() {
+function App(): JSX.Element{
   const [idx, setIdx] = useState<number>(0)
   const [selectedCountry, setSelectedCountry] = useState<string>('')
   const [selectedCity, setSelectedCity] = useState<string>('')
