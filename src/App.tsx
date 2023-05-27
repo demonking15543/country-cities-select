@@ -1,5 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 type Tcountry = {
@@ -10,10 +9,10 @@ type Tcountry = {
 
 }
 function App() {
-  const [country, setCountry] = useState<Tcountry>(
-    {id:0, name:"", label:"", cities:[]
-
-  })
+  const [idx, setIdx] = useState<number>(0)
+  const [selectedCountry, setSelectedCountry] = useState<string>('')
+  const [selectedCity, setSelectedCity] = useState<string>('')
+  
 const countries = [
   {id:1, name:"India", label:"IN", cities: ["Delhi", "Odisa"]},
     {id:2, name:"America", label:"US", cities: ["Washington DC", "New York"]},
@@ -22,27 +21,42 @@ const countries = [
 
 ]
 
-const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCountry({...countries[1]})
+// Get selected option and update setIdx and reset selectedCity
+const handleChange = (e: React.ChangeEvent<HTMLSelectElement>):void => {
+    setIdx(parseInt(e.target.value, 10))
+    setSelectedCountry(countries[parseInt(e.target.value, 10)].name)
+    setSelectedCity('')
+    
 
 }
-console.log(country)
+
+
+console.log("selected  country and city ", selectedCountry, selectedCity)
   return (
     <div className="App">
 
-      <select 
-      onChange={handleChange}     
+      <select
+      defaultValue={selectedCountry} 
+      onChange={handleChange} 
+         
        >
+        <option value="">Selcet a Country...</option>
+
         {
-        countries.map((country, index)=>(
+        countries.map((country:Tcountry, index:number)=>(
           <option key={index} value={index}>{country?.label}</option>
         ))
         }
       </select>
+        
+      <select 
+      value={selectedCity}
+      onChange={(e:React.ChangeEvent<HTMLSelectElement>):void=>setSelectedCity(e.target.value)}
+      >
+        <option value="">Selcet city</option>
+        {countries[idx]?.cities?.map((city:string, index:number)=>(
 
-      <select>
-        {country?.cities?.map(city=>(
-          <option>{city}</option>
+          <option key={index} value={city}>{city}</option>
         ))}
         </select>
     </div>
