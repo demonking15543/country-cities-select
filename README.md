@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Country cities select - option [checkout live demo here ](https://1msfb6-3000.csb.app/).
+Country cities select - option [checkout live demo here ](https://8se7bp-3000.csb.app/).
 
 ## Available Scripts
 
