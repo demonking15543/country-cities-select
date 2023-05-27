@@ -16,7 +16,7 @@ function App(): JSX.Element{
 const countries = [
   {id:1, name:"India", label:"IN", cities: ["Delhi", "Odisa"]},
     {id:2, name:"America", label:"US", cities: ["Washington DC", "New York"]},
-  {id:3, name:"Australia", label:"AUS", cities: ["Sydney", "Melbourn"]},
+  {id:3, name:"Australia", label:"AUS", cities: ["Sydney", "Melbourne"]},
   {id:4, name:"Pakistan", label:"PAK", cities: ["Lahore", "Islamabad"]},
 
 ]
