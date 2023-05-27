@@ -24,7 +24,7 @@ const countries = [
 // Get selected option and update setIdx and reset selectedCity
 const handleChange = (e: React.ChangeEvent<HTMLSelectElement>):void => {
     setIdx(parseInt(e.target.value, 10))
-    setSelectedCountry(countries[parseInt(e.target.value, 10)].name)
+    setSelectedCountry(countries[parseInt(e.target.value, 10)]?.name)
     setSelectedCity('')
     
 
