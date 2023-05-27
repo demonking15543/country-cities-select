@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Country cities select - option [checkout live demo here ](https://1msfb6-3000.csb.app/).
 
 ## Available Scripts
 
